@@ -36,6 +36,27 @@ def threshold(image_arr):
     return new_arr
 
 
+def create_examples():
+    number_array_examples = open('num_arr_ex.txt', 'a')
+    numbers_we_have = range(1,10)
+    for each_num in numbers_we_have:
+        #print each_num
+        for further_num in numbers_we_have:
+            # can just literally add *.1 and have it create float
+            # but since we are gonna use it as string
+            # this is aight
+            print(str(each_num)+'.'+str(further_num))
+            img_file_path = 'images/numbers/'+str(each_num)+'.'+str(further_num)+'.png'
+            ei = Image.open(img_file_path)
+            eiar = np.array(ei)
+            eiarl = str(eiar.tolist())
+
+            print(eiarl)
+            line_to_write = str(each_num)+'::'+eiarl+'\n'
+            number_array_examples.write(line_to_write)
+
+
+
 
 
 # mapping them all to arrays
@@ -70,3 +91,4 @@ ax4.imshow(img4_arr)
 
 # actually showing the thing
 plt.show()
+create_examples()
