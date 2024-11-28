@@ -14,7 +14,7 @@ def menu():
     choice = input("Enter your selection:")
 
     print(choice)
-    if choice.isdigit():
+    if choice.isdigit(): # oddly enough works as it should
         match int(choice):
             case 1:
                 print("show docs here (maybe in separate file?")
