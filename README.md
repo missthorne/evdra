@@ -6,6 +6,6 @@
 Notes: 
 The oddly named folders in the project directory are just places in which I check out different tutorials 
 
-Current contenders are:
-Python guide thing: *outdated guide, folder stayed for reference*
+Current contenders are: <br>
+Python guide thing: *outdated guide, folder stayed for reference* <br>
 KerasCV/TensorFlow - resolving import issues, looking good
