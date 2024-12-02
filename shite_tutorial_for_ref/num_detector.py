@@ -12,6 +12,7 @@ def num_detector(file_path):
 
     matched_arr = []
     load_examps = open('num_arr_ex.txt', 'r').read()
+    load_examps = load_examps.split('\n')
 
     i = Image.open(file_path)
     iar = np.array(i)
