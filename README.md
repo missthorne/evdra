@@ -8,4 +8,4 @@ The oddly named folders in the project directory are just places in which I chec
 
 Current contenders are: <br>
 Python guide thing: *outdated guide, folder stayed for reference* <br>
-KerasCV/TensorFlow - resolving import issues, looking good
+KerasCV/TensorFlow: basic tutorial resolved, looking very promising, check code for details
