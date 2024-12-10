@@ -62,7 +62,86 @@ model = tf.keras.Sequential([
 # loss function - measures how accurate it is during training. minimize to "steer" the model
 # metrics - monitoring training and testing steps
 # this here uses accuracy meaning it'll return the fraction of the images that are correctly classified
-
+# throws another CUDA warning, not sure how to get rid of that
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
+
+# feeding the model
+model.fit(train_images, train_labels, epochs=10)
+
+# setting some stat variables
+test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
+
+print('\n Test accuracy: ', test_acc)
+
+# converting linear outputs to probabilities
+probability_model = tf.keras.Sequential([model,
+                                         tf.keras.layers.Softmax()])
+
+# making predictions for each image in the test set
+predictions = probability_model.predict(test_images)
+
+# to look at first one do
+# predictions[0]
+# this will print out an array of 10 numbers
+# showing probability of the specimen belonging to one of the classes
+
+
+# this will print the label with the highest confidence/probability value
+# np.argmax(predictions[0])
+
+# defining functions to graph a full set of 10 class predictions
+
+def plot_image(i, predictions_array, true_label, img):
+    true_label, img = true_label[i], img[i]
+    plt.grid(False)
+    plt.xticks([])
+    plt.yticks([])
+
+    plt.imshow(img, cmap=plt.cm.binary)
+
+    predicted_label = np.argmax(predictions_array)
+    if predicted_label == true_label:
+        color = 'blue'
+    else:
+        color ='red'
+
+    plt.xlabel("{} {:2.0f}% ({})".format(class_names[predicted_label],
+                                         100*np.max(predictions_array),
+                                         class_names[true_label]),
+                                         color=color)
+
+def plot_value_array(i, predictions_array, true_label):
+    true_label = true_label[i]
+    plt.grid(False)
+    plt.xticks(range(10))
+    plt.yticks([])
+    thisplot = plt.bar(range(10), predictions_array, color="#777777")
+    plt.ylim([0, 1])
+    predicted_label = np.argmax(predictions_array)
+
+    thisplot[predicted_label].set_color('red')
+    thisplot[true_label].set_color('blue')
+
+    #plt.figure(figsize=(6,3))
+    #plt.subplot(1,2,1)
+    #plot_image(i, predictions[i], test_labels, test_images)
+    #plt.subplot(1,2,2)
+    #plot_value_array(i, predictions[i], test_labels)
+    #plt.show()
+
+# plot the first x test images, predicted label and true label
+# correct in blue, incorrect in red
+
+num_rows = 5
+num_cols = 3
+num_images = num_rows*num_cols
+plt.figure(figsize=(2*2*num_cols, 2*num_rows))
+for i in range(num_images):
+    plt.subplot(num_rows, 2*num_cols, 2*i+1)
+    plot_image(i, predictions[i], test_labels, test_images)
+    plt.subplot(num_rows, 2*num_cols, 2*i+2)
+    plot_value_array(i, predictions[i], test_labels)
+plt.tight_layout()
+plt.show()
