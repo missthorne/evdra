@@ -13,8 +13,6 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-print(tf.__version__)
-
 # will be using fashion MNIST, kinda hello world of ML world
 # 60k greyscale images with fashion items
 # test set has 10k images
@@ -123,13 +121,6 @@ def plot_value_array(i, predictions_array, true_label):
 
     thisplot[predicted_label].set_color('red')
     thisplot[true_label].set_color('blue')
-
-    #plt.figure(figsize=(6,3))
-    #plt.subplot(1,2,1)
-    #plot_image(i, predictions[i], test_labels, test_images)
-    #plt.subplot(1,2,2)
-    #plot_value_array(i, predictions[i], test_labels)
-    #plt.show()
 
 # plot the first x test images, predicted label and true label
 # correct in blue, incorrect in red
