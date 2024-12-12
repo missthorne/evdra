@@ -2,7 +2,7 @@
 # This here file will just serve as a training area to check
 # How under and overfilling affects models and prediction accuracy
 # This will be most useful while training EVDRA
-# BTW HIGGS TAKES LIKE 5 HOURS TO DOWNLOAD SO SETTING THIS ASIDE
+# BTW THE HIGGS SET TAKES LIKE 5 HOURS TO DOWNLOAD SO SETTING THIS ASIDE
 
 # imports, remember tensor shits itself and pycharm does not see keras
 
