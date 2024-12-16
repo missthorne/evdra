@@ -38,8 +38,7 @@ gz = tf.keras.utils.get_file('HIGGS.csv.gz', 'http://mlphysics.ics.uci.edu/data/
 FEATURES = 28
 
 # tf.data.experimental.CsvDataset reads from gz archives without intermediate steps
-ds = tf.data.experimenta.CvsDataset(gz,[float(),]*(FEATURES+1), compression_type="GZIP")
-
+ds = tf.data.experimental.CsvDataset(gz,[float(),]*(FEATURES+1), compression_type="GZIP")
 # returns a list of scalars for each record, repacks it into (feature_vector,label) pair
 def pack_row(*row):
     label = row[0]
@@ -80,7 +79,7 @@ train_ds = train_ds.shuffle(BUFFER_SIZE).repeat().batch(BATCH_SIZE)
 
 # this sets InverseTimeDecay to hyperbolically decrease learning rate to 1/2 of the base rate at 1000 epochs
 # 1/3 at 2000 epochs and so on
-lr_schedule = tf.keras.optimizers.chedules.InverseTimeDecay(
+lr_schedule = tf.keras.optimizers.schedules.InverseTimeDecay(
     0.001,
     decay_steps=STEPS_PER_EPOCH*1000,
     decay_rate=1,
@@ -90,7 +89,7 @@ def get_optimizer():
     return tf.keras.optimizers.Adam(lr_schedule)
 
 
-step = np.lindspace(0,100000)
+step = np.linspace(0,100000)
 lr = lr_schedule(step)
 plt.figure(figsize = (8,6))
 plt.plot(step/STEPS_PER_EPOCH, lr)
@@ -105,7 +104,7 @@ def get_callbacks(name):
     return [
         tfdocs.modeling.EpochDots(),
         tf.keras.callbacks.EarlyStopping(monitor='val_binary_crossentropy', patience=200),
-        tf.keras.callbacs.TensorBoard(logdir/name),
+        tf.keras.callbacks.TensorBoard(logdir/name),
     ]
 
 def compile_and_fit(model, name, optimizer=None, max_epochs=10000):
