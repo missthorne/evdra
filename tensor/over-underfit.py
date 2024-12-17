@@ -1,4 +1,6 @@
-
+# APPARENTLY BROKEN TUTORIAL, ISSUES OPENED BUT NOTHING HAS BEEN DONE
+# THANKS TENSORFLOW, VERY COOL
+#
 # This here file will just serve as a training area to check
 # How under and overfilling affects models and prediction accuracy
 # This will be most useful while training EVDRA
@@ -8,6 +10,7 @@
 
 import tensorflow as tf
 # tensor.keras freaks the feck out so just do keras
+import keras
 from keras import layers
 from keras import regularizers
 from keras.src.ops import BinaryCrossentropy
@@ -58,7 +61,7 @@ N_VALIDATION = int(1e3)
 N_TRAIN = int(1e4)
 BUFFER_SIZE = int(1e4)
 BATCH_SIZE = 500
-STEPS_PER_EPOCH = N_TRAIN/BATCH_SIZE
+STEPS_PER_EPOCH = int(N_TRAIN/BATCH_SIZE)
 
 # setting cache to make sure loader does not shit itself and try to read whole set every time
 validate_ds = packed_ds.take(N_VALIDATION).cache()
@@ -87,7 +90,6 @@ lr_schedule = tf.keras.optimizers.schedules.InverseTimeDecay(
 
 def get_optimizer():
     return tf.keras.optimizers.Adam(lr_schedule)
-
 
 step = np.linspace(0,100000)
 lr = lr_schedule(step)
