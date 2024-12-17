@@ -6,6 +6,4 @@
 Notes: 
 The oddly named folders in the project directory are just places in which I check out different tutorials 
 
-Current contenders are: <br>
-Python guide thing: *outdated guide, folder stayed for reference* <br>
-KerasCV/TensorFlow: basic tutorial resolved, looking very promising, check code for details
+KerasCV/TensorFlow: basic tutorial resolved, some tutorials broken?, check code for details
