@@ -10,10 +10,11 @@
 # Remember that everything I said about tensorflow errors and imports still applies
 #  - Ruby
 
+# best to import keras from my experience
 import os
+import glob
 import tensorflow as tf
 import keras
-from keras.src.saving.saving_lib import save_weights_only
 
 print(tf.version.VERSION)
 
@@ -119,3 +120,46 @@ model.fit(train_images,
           callbacks=[cp_callback],
           validation_data=(test_images, test_labels),
           verbose=0)
+
+# Review the checkpoints and choose latest
+print(os.listdir(checkpoint_dir))
+
+# NOTE: TensorFlow format saves only the 5 most recent checkpoints
+# NOTE: Using a different library than specified for compatibility reasons (plus globglob sounsd funny)
+latest = max(glob.glob("training_2/*.h5"))
+
+
+# Testing (resetting the model and loading from latest)
+
+# New instance
+model = create_model()
+
+# Load
+model.load_weights(latest)
+
+# Re-evaluate to check
+loss, acc = model.evaluate(test_images, test_labels, verbose=2)
+print("Restored model, accuracy: {:5.2f}%".format(100 * acc))
+
+
+# Saving entire models
+
+# Keras v3 .keras format
+
+model = create_model()
+model.fit(train_images, train_labels, epochs=5)
+
+# Save the entire model
+model.save('my_model.keras')
+
+# Load saved model from .keras zip
+new_model = tf.keras.models.load_model('my_model.keras')
+
+# Show architecture
+new_model.summary()
+
+# Evaluate restored model
+loss, acc = new_model.evaluate(test_images, test_labels, verbose=2)
+print('Restored model, accuracy: {:5.2f}%'.format(100* acc))
+
+print(new_model.predict(test_images).shape)
