@@ -131,8 +131,6 @@ latest = max(glob.glob("training_2/*.h5"))
 
 
 # Testing (resetting the model and loading from latest)
-
-# New instance
 model = create_model()
 
 # Load
@@ -143,10 +141,10 @@ loss, acc = model.evaluate(test_images, test_labels, verbose=2)
 print("Restored model, accuracy: {:5.2f}%".format(100 * acc))
 
 
-# Saving entire models
-
+# Here we shall save entire models .keras format
+# This allows to skip creating models and loading checkpoints every time
+#
 # Keras v3 .keras format
-
 model = create_model()
 model.fit(train_images, train_labels, epochs=5)
 
