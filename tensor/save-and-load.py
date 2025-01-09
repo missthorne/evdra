@@ -1,5 +1,6 @@
 # THIS IS ANOTHER TUTORIAL BY TENSORFLOW
 # PLEASE WORK THIS TIME
+# Edit: it worked this time
 #
 # This document will essentially serve as a way to learn how to save
 # and import various models in HDF5 format. This is imperative to our
