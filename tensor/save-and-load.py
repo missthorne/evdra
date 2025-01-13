@@ -126,7 +126,7 @@ model.fit(train_images,
 print(os.listdir(checkpoint_dir))
 
 # NOTE: TensorFlow format saves only the 5 most recent checkpoints
-# NOTE: Using a different library than specified for compatibility reasons (plus globglob sounsd funny)
+# NOTE: Using a different library than specified for compatibility reasons (plus globglob sounds funny)
 latest = max(glob.glob("training_2/*.h5"))
 
 

@@ -85,6 +85,8 @@ predictions = probability_model.predict(test_images)
 # this will print out an array of 10 numbers
 # showing probability of the specimen belonging to one of the classes
 
+# saving the model to a .keras file
+model.save('mnist.keras')
 
 # this will print the label with the highest confidence/probability value
 # np.argmax(predictions[0])
