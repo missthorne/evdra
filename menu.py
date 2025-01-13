@@ -1,12 +1,12 @@
-print("hello, this is a file I shall use to feck about in python until I figure out what's what.")
+import os
 
-print("what is it that you'd like to do?")
+print("Hello! What would you like to do?")
 
 def menu():
     menu_entries = [
-        "1. See documentation",
-        "2. idk yet just checking if this works",
-        "3. help?"
+        "1. Sync with Raspberry Pi",
+        "2. Run MNIST demonstration",
+        "3. Run save-load demonstration"
     ]
     for entry in menu_entries:
         print(entry)
@@ -17,11 +17,16 @@ def menu():
     if choice.isdigit(): # oddly enough works as it should
         match int(choice):
             case 1:
-                print("show docs here (maybe in separate file?")
+                print("Syncing...")
+                os.system("rsync -av -e ssh ./* evdra@raspberrypi.local:~/soft")
             case 2:
-                print("idk but I think 2 works")
+                print("Running classification demonstration...")
+                # HORRIBLE PRACTICE but this is just demonstration
+                os.system("python3 ./tensor/classify.py")
             case 3:
-                print("no help")
+                print("Running save/load demonstration")
+                # Shits itself if ran through os.system but who cares rn, save-load works
+                os.system("python3 ./tensor/save-and-load.py")
             case _:
                 print ("Not a valid selection!")
                 menu()
