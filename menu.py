@@ -20,7 +20,7 @@ def menu():
                 print("Syncing...")
                 os.system("rsync -av -e ssh ./* evdra@raspberrypi.local:~/soft")
             case 2:
-                print("Running classification demonstration...")
+                print("Running MNIST demonstration...")
                 # HORRIBLE PRACTICE but this is just demonstration
                 os.system("python3 ./tensor/classify.py")
             case 3:
