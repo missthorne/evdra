@@ -5,3 +5,5 @@
 NOTES:
 The image classification shall be done using LabelImg and label-studio from the link below:
 https://github.com/HumanSignal/label-studio
+The files intead of object_detection are intented to be used with an anaconda environment set according to this tutorial: 
+https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html
