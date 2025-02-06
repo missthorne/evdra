@@ -58,7 +58,7 @@ print(tf.__version__) # check the version innit
 # --output_file_prefix=$OUTPUT_TFRECORD_TRAIN \
 # --num_shards=1
 
-# Configure Retinanet for custom dataset
+# Configure RetinaNet for custom dataset
 
 train_data_input_path = './bccd_coco_tfrecords/train-00000-of-00001.tfrecord'
 valid_data_input_path = './bccd_coco_tfrecords/valid-00000-of-00001.tfrecord'
@@ -139,7 +139,7 @@ else:
     print('Grab some popcorn, pop in the extended version of The Hobbit and relax, this will take a while')
     distribution_strategy = tf.distribute.OneDeviceStrategy(logical_device_names[0])
 
-print('Done')
+print('Starting model training')
 # panic starts herec
 
 # Task object handles building the dataset
@@ -195,7 +195,7 @@ def show_batch(raw_records, num_of_examples):
     plt.axis('off')
     plt.title(f'Image-{i+1}')
   # plt.show()
-  # PLT.SHOW SHITS ITSELF EVEN THOUGH I EXPLICITLY CALL FOR QT
+  # PLT.SH OW SHITS ITSELF EVENTHOUGH I EXPLICITLY CALL FOR QT
   # I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON
   plt.savefig('batch.png')
 
