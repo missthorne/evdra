@@ -3,11 +3,10 @@
 #
 # I pray to every god. Please let this go smoothly.
 #
-# As per usual, this is intended for ues with an Anaconda environment.
+# As per usual, this is intended for use with an Anaconda environment.
 # Upon completion, the relevant yml file shall be included in the repo
-
+#
 # imports and sacrificing virtual virgins to the gods of AI
-# REFUSES TO DISPLAY WHYYY
 import os
 import io
 import pprint
@@ -62,7 +61,7 @@ print(tf.__version__) # check the version innit
 # Configure Retinanet for custom dataset
 
 train_data_input_path = './bccd_coco_tfrecords/train-00000-of-00001.tfrecord'
-valid_data_input_path = '/.bccd_coco_tfrecords/valid-00000-of-00001.tfrecord'
+valid_data_input_path = './bccd_coco_tfrecords/valid-00000-of-00001.tfrecord'
 test_data_input_path = './bccd_coco_tfrecords/test-00000-of-00001.tfrecord'
 model_dir='./trained_model'
 export_dir='./exported_model'
@@ -167,6 +166,7 @@ category_index={
         'name' : 'WBC'
     }
 }
+
 tf_ex_decoder = TfExampleDecoder()
 
 def show_batch(raw_records, num_of_examples):
@@ -197,7 +197,7 @@ def show_batch(raw_records, num_of_examples):
   # plt.show()
   # PLT.SHOW SHITS ITSELF EVEN THOUGH I EXPLICITLY CALL FOR QT
   # I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON
-  plt.savefig('pleasework.png')
+  plt.savefig('batch.png')
 
 
 # Creating the two components of the bounding box
@@ -209,11 +209,100 @@ raw_records = tf.data.TFRecordDataset(
         buffer_size=buffer_size).take(num_of_examples)
 show_batch(raw_records, num_of_examples)
 
-#model, eval_logs = tfm.core.train_lib.run_experiment(
-#    distribution_strategy=distribution_strategy,
-#    task=task,
-#    mode='train_and_eval',
-#    params=exp_config,
-#    model_dir=model_dir,
-#    run_post_eval=True
-#)
+model, eval_logs = tfm.core.train_lib.run_experiment(
+    distribution_strategy=distribution_strategy,
+    task=task,
+    mode='train_and_eval',
+    params=exp_config,
+    model_dir=model_dir,
+    run_post_eval=True)
+
+# Exporting model directly as I am realising this will be hell
+export_saved_model_lib.export_inference_graph(
+    input_type='image_tensor',
+    batch_size=1,
+    input_image_size=[HEIGHT, WIDTH],
+    params=exp_config,
+    checkpoint_path=tf.train.latest_checkpoint(model_dir),
+    export_dir=export_dir)
+
+
+# inference
+def load_image_into_numpy_array(path):
+    """ Load an image into a numpy array
+    
+    It feeds it into the tensorflow graph
+    By convention we put it into a numpy array with shape
+    (height, width, channels) where channels=3 for RGB.
+    
+    Args:
+        path: the file path to the image
+        
+    Returns:
+        uint8 numpy array with shape (img_height, img_width, 3)
+    """
+    image = None
+    if(path.startswith('http')):
+        response=urlopen(path)
+        image_data = response.read()
+        image_data = BytesIO(image_data)
+        image = Image.open(image_data)
+    else:
+        image_data = tf.io.gfile.GFile(path, 'rb').read()
+        image = Image.open(BytesIO(image_data))
+
+    (im_width, im_height) = image.size
+    return np.array(image.getdata()).reshape(
+        (1, im_height, im_width, 3)).astype(np.uint8
+    )
+
+def build_inputs_for_object_detection(image, input_image_size):
+    # Builds Object Detection model inputs for serving
+    image, _ = resize_and_crop_image(
+        image,
+        input_image_size,
+        padded_size=input_image_size,
+        aug_scale_min=1.0,
+        aug_scale_max=1.0
+    )
+    return image
+num_of_examples = 3
+
+test_ds = tf.data.TFRecordDataset(
+    './bccd_coco_tfrecords/test-00000-of-00001.tfrecord').take(
+        num_of_examples)
+show_batch(test_ds, num_of_examples)
+
+# Trying to import model
+imported = tf.saved_model.load(export_dir)
+model_fn = imported.signatures['serving_default']
+
+# Visualizing predictions
+input_image_size = (HEIGHT, WIDTH)
+plt.figure(figsize=(20, 20))
+min_score_thresh = 0.30 # change minimum score to see all bounding boxes confidence
+
+for i, serialized_example in enumerate(test_ds):
+    plt.subplot(1, 3, i+1)
+    decoded_tensors = tf_ex_decoder.decode(serialized_example)
+    image = build_inputs_for_object_detection(decoded_tensors['image'], input_image_size)
+    image = tf.expand_dims(image, axis=0)
+    image = tf.cast(image, dtype = tf.uint8)
+    image_np = image[0].numpy()
+    result = model_fn(image)
+    visualization_utils.visualize_boxes_and_labels_on_image_array(
+        image_np,
+        result['detection_boxes'][0].numpy(),
+        result['detection_classes'][0].numpy().astype(int),
+        result['detection_scores'][0].numpy(),
+        category_index=category_index,
+        use_normalized_coordinates=False,
+        max_boxes_to_draw=200,
+        min_score_thresh=min_score_thresh,
+        agnostic_mode=False,
+        instance_masks=None,
+        line_thickness=4
+    )
+    plt.imshow(image_np)
+    plt.axis('off')
+plt.savefig('predictions.png')
