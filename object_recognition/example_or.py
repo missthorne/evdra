@@ -7,6 +7,7 @@
 # Upon completion, the relevant yml file shall be included in the repo
 
 # imports and sacrificing virtual virgins to the gods of AI
+# REFUSES TO DISPLAY WHYYY
 import os
 import io
 import pprint
@@ -14,8 +15,9 @@ import tempfile
 import matplotlib
 import numpy as np
 import tensorflow as tf
+import matplotlib
+matplotlib.use("QtAgg")
 import matplotlib.pyplot as plt
-
 from PIL import Image
 from six import BytesIO
 from IPython import display
@@ -33,6 +35,7 @@ from official.vision.ops.preprocess_ops import normalize_image
 from official.vision.ops.preprocess_ops import resize_and_crop_image
 from official.vision.utils.object_detection import visualization_utils
 from official.vision.dataloaders.tf_example_decoder import TfExampleDecoder
+
 
 pp = pprint.PrettyPrinter(indent=4) # setting some pretty printer to please the higher beings
 print(tf.__version__) # check the version innit
@@ -124,4 +127,93 @@ exp_config.trainer.optimizer_config.warmup.linear.warmup_learning_rate = 0.05
 pp.pprint(exp_config.as_dict())
 display.Javascript('google.colab.output.setIframeHeight("500px");')
 
+if exp_config.runtime.mixed_precision_dtype == tf.float16:
+    tf.keras.mixed_precision.set_global_policy('mixed_float16')
 
+if 'GPU' in ''.join(logical_device_names):
+    distribution_strategy = tf.distribute.MirroredStrategy()
+elif 'TPU' in ''.join(logical_device_names):
+    tf.tpu.experimental.initialize_tpu_system()
+    tpu = tf.distribute.cluster_resolver.TPUClusterResolver(tpu='/device:TPU_SYSTEM:0')
+    distribution_strategy = tf.distribute.experimental.TPUStrategy(tpu)
+else:
+    print('Grab some popcorn, pop in the extended version of The Hobbit and relax, this will take a while')
+    distribution_strategy = tf.distribute.OneDeviceStrategy(logical_device_names[0])
+
+print('Done')
+# panic starts herec
+
+# Task object handles building the dataset
+with distribution_strategy.scope():
+    task = tfm.core.task_factory.get_task(exp_config.task, logging_dir=model_dir)
+
+for images, labels in task.build_inputs(exp_config.task.train_data).take(1):
+    print()
+    print(f'images.shape: {str(images.shape):16} images.dtype: {images.dtype!r}')
+    print(f'labels.keys: {labels.keys()}')
+
+# Creating index with different object that can be detected (categories)
+category_index={
+    1: {
+        'id' : 1,
+        'name' : 'Platelets'
+    },
+    2: {
+        'id' : 2,
+        'name' : 'RBC'
+    },
+    3: {
+        'id' : 3,
+        'name' : 'WBC'
+    }
+}
+tf_ex_decoder = TfExampleDecoder()
+
+def show_batch(raw_records, num_of_examples):
+  plt.figure(figsize=(20, 20))
+  use_normalized_coordinates=True
+  min_score_thresh = 0.30
+  for i, serialized_example in enumerate(raw_records):
+    plt.subplot(1, 3, i + 1)
+    decoded_tensors = tf_ex_decoder.decode(serialized_example)
+    image = decoded_tensors['image'].numpy().astype('uint8')
+    scores = np.ones(shape=(len(decoded_tensors['groundtruth_boxes'])))
+    visualization_utils.visualize_boxes_and_labels_on_image_array(
+        image,
+        decoded_tensors['groundtruth_boxes'].numpy(),
+        decoded_tensors['groundtruth_classes'].numpy().astype('int'),
+        scores,
+        category_index=category_index,
+        use_normalized_coordinates=use_normalized_coordinates,
+        max_boxes_to_draw=200,
+        min_score_thresh=min_score_thresh,
+        agnostic_mode=False,
+        instance_masks=None,
+        line_thickness=4)
+
+    plt.imshow(image)
+    plt.axis('off')
+    plt.title(f'Image-{i+1}')
+  # plt.show()
+  # PLT.SHOW SHITS ITSELF EVEN THOUGH I EXPLICITLY CALL FOR QT
+  # I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON I HATE PYTHON
+  plt.savefig('pleasework.png')
+
+
+# Creating the two components of the bounding box
+buffer_size = 20
+num_of_examples = 3
+
+raw_records = tf.data.TFRecordDataset(
+    exp_config.task.train_data.input_path).shuffle(
+        buffer_size=buffer_size).take(num_of_examples)
+show_batch(raw_records, num_of_examples)
+
+#model, eval_logs = tfm.core.train_lib.run_experiment(
+#    distribution_strategy=distribution_strategy,
+#    task=task,
+#    mode='train_and_eval',
+#    params=exp_config,
+#    model_dir=model_dir,
+#    run_post_eval=True
+#)
