@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <task>
+      <segments>
+        <segment>
+          <id>40152</id>
+          <start>0</start>
+          <stop>99</stop>
+        </segment>
+      </segments>
+      <owner>
+        <username>TrainingData</username>
+        <email/>
+      </owner>
+      
+      <labels>
+        <label>
+          <name>face</name>
+          <color>#24b353</color>
+          <type>rectangle</type>
+          <attributes>
+          </attributes>
+        </label>
+      </labels>
+    </task>
+    <dumped>2023-11-02 19:01:47.834062+00:00</dumped>
+  </meta>
+  <image id="0" name="images/0.jpg" width="2208" height="2944">
+    <box label="face" source="manual" occluded="0" xtl="446.28" ytl="162.08" xbr="1711.16" ybr="2063.39" rotation="3.50" z_order="0">
+    </box>
+  </image>
+  <image id="1" name="images/1.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="610.53" ytl="1274.55" xbr="1716.90" ybr="2746.81" z_order="0">
+    </box>
+  </image>
+  <image id="10" name="images/10.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="707.24" ytl="955.50" xbr="1642.69" ybr="2453.60" z_order="0">
+    </box>
+  </image>
+  <image id="11" name="images/11.jpg" width="1632" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="274.90" ytl="379.11" xbr="1327.80" ybr="2001.80" z_order="0">
+    </box>
+  </image>
+  <image id="12" name="images/12.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="940.76" ytl="785.40" xbr="1980.36" ybr="2306.17" rotation="13.50" z_order="0">
+    </box>
+  </image>
+  <image id="13" name="images/13.jpg" width="3120" height="4160">
+    <box label="face" source="manual" occluded="0" xtl="873.30" ytl="544.66" xbr="2306.20" ybr="2731.96" z_order="0">
+    </box>
+  </image>
+  <image id="14" name="images/14.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="534.39" ytl="916.01" xbr="1438.30" ybr="2110.06" rotation="4.20" z_order="0">
+    </box>
+  </image>
+  <image id="15" name="images/15.jpg" width="2320" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="550.10" ytl="410.50" xbr="1781.52" ybr="2153.06" z_order="0">
+    </box>
+  </image>
+  <image id="16" name="images/16.jpg" width="3000" height="4000">
+    <box label="face" source="manual" occluded="0" xtl="981.20" ytl="1239.90" xbr="2083.49" ybr="2878.60" z_order="0">
+    </box>
+  </image>
+  <image id="17" name="images/17.jpg" width="1936" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="527.70" ytl="670.90" xbr="1303.00" ybr="1823.90" z_order="0">
+    </box>
+  </image>
+  <image id="18" name="images/18.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="494.90" ytl="466.01" xbr="1275.70" ybr="1583.70" z_order="0">
+    </box>
+  </image>
+  <image id="19" name="images/19.jpg" width="1944" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="397.06" ytl="858.33" xbr="1337.20" ybr="2281.36" rotation="8.70" z_order="0">
+    </box>
+  </image>
+  <image id="2" name="images/2.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="429.20" ytl="478.80" xbr="1538.80" ybr="1987.40" z_order="0">
+    </box>
+  </image>
+  <image id="20" name="images/20.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="439.90" ytl="842.33" xbr="1462.40" ybr="2420.64" z_order="0">
+    </box>
+  </image>
+  <image id="21" name="images/21.jpg" width="1472" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="380.39" ytl="801.29" xbr="1214.31" ybr="1985.61" rotation="3.10" z_order="0">
+    </box>
+  </image>
+  <image id="22" name="images/22.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="1150.40" ytl="1070.77" xbr="2577.72" ybr="3209.41" rotation="5.40" z_order="0">
+    </box>
+  </image>
+  <image id="23" name="images/23.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="1196.30" ytl="1296.20" xbr="2423.81" ybr="3002.86" z_order="0">
+    </box>
+  </image>
+  <image id="24" name="images/24.jpg" width="1280" height="2560">
+    <box label="face" source="manual" occluded="0" xtl="301.30" ytl="547.10" xbr="940.10" ybr="1441.46" z_order="0">
+    </box>
+  </image>
+  <image id="25" name="images/25.jpg" width="960" height="1280">
+    <box label="face" source="manual" occluded="0" xtl="288.80" ytl="458.10" xbr="705.30" ybr="1088.00" z_order="0">
+    </box>
+  </image>
+  <image id="26" name="images/26.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="699.50" ytl="718.20" xbr="1665.20" ybr="2141.00" z_order="0">
+    </box>
+  </image>
+  <image id="27" name="images/27.jpg" width="960" height="1280">
+    <box label="face" source="manual" occluded="0" xtl="322.00" ytl="330.26" xbr="748.60" ybr="944.00" z_order="0">
+    </box>
+  </image>
+  <image id="28" name="images/28.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="775.63" ytl="459.90" xbr="1858.44" ybr="2134.20" z_order="0">
+    </box>
+  </image>
+  <image id="29" name="images/29.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="522.60" ytl="496.00" xbr="1318.10" ybr="1618.20" z_order="0">
+    </box>
+  </image>
+  <image id="3" name="images/3.jpg" width="1936" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="592.29" ytl="766.10" xbr="1232.29" ybr="1756.50" z_order="0">
+    </box>
+  </image>
+  <image id="30" name="images/30.jpg" width="1836" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="558.72" ytl="557.60" xbr="1525.83" ybr="2143.90" z_order="0">
+    </box>
+  </image>
+  <image id="31" name="images/31.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="613.22" ytl="587.90" xbr="1740.60" ybr="2136.00" z_order="0">
+    </box>
+  </image>
+  <image id="32" name="images/32.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="423.08" ytl="563.60" xbr="1421.45" ybr="1993.22" z_order="0">
+    </box>
+  </image>
+  <image id="33" name="images/33.jpg" width="2320" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="459.07" ytl="405.20" xbr="1880.50" ybr="2802.00" z_order="0">
+    </box>
+  </image>
+  <image id="34" name="images/34.jpg" width="1528" height="3216">
+    <box label="face" source="manual" occluded="0" xtl="187.28" ytl="381.70" xbr="1298.60" ybr="1846.32" z_order="0">
+    </box>
+  </image>
+  <image id="35" name="images/35.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="729.69" ytl="737.46" xbr="1796.10" ybr="2257.21" z_order="0">
+    </box>
+  </image>
+  <image id="36" name="images/36.jpg" width="1920" height="1920">
+    <box label="face" source="manual" occluded="0" xtl="484.02" ytl="230.26" xbr="1373.62" ybr="1451.93" rotation="347.60" z_order="0">
+    </box>
+  </image>
+  <image id="37" name="images/37.jpg" width="4224" height="5632">
+    <box label="face" source="manual" occluded="0" xtl="1369.24" ytl="1084.85" xbr="2961.28" ybr="3456.35" rotation="2.60" z_order="0">
+    </box>
+  </image>
+  <image id="38" name="images/38.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="816.01" ytl="819.31" xbr="1682.50" ybr="1955.64" z_order="0">
+    </box>
+  </image>
+  <image id="39" name="images/39.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="800.92" ytl="382.73" xbr="1487.82" ybr="1366.44" rotation="354.70" z_order="0">
+    </box>
+  </image>
+  <image id="4" name="images/4.jpg" width="1980" height="2640">
+    <box label="face" source="manual" occluded="0" xtl="284.70" ytl="868.50" xbr="1391.70" ybr="2522.29" z_order="0">
+    </box>
+  </image>
+  <image id="40" name="images/40.jpg" width="3136" height="4224">
+    <box label="face" source="manual" occluded="0" xtl="921.29" ytl="1048.87" xbr="2360.00" ybr="3162.73" z_order="0">
+    </box>
+  </image>
+  <image id="41" name="images/41.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="753.10" ytl="1138.11" xbr="1662.10" ybr="2468.90" rotation="1.40" z_order="0">
+    </box>
+  </image>
+  <image id="42" name="images/42.jpg" width="3880" height="5184">
+    <box label="face" source="manual" occluded="0" xtl="1234.76" ytl="2218.60" xbr="2534.80" ybr="4147.14" z_order="0">
+    </box>
+  </image>
+  <image id="43" name="images/43.jpg" width="2320" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="855.38" ytl="444.20" xbr="1759.10" ybr="1805.74" z_order="0">
+    </box>
+  </image>
+  <image id="44" name="images/44.jpg" width="1640" height="3648">
+    <box label="face" source="manual" occluded="0" xtl="395.60" ytl="1146.50" xbr="1420.90" ybr="2620.92" z_order="0">
+    </box>
+  </image>
+  <image id="45" name="images/45.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="809.23" ytl="1101.26" xbr="1748.20" ybr="2531.55" rotation="3.10" z_order="0">
+    </box>
+  </image>
+  <image id="46" name="images/46.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="677.30" ytl="957.04" xbr="1766.98" ybr="2535.90" rotation="3.50" z_order="0">
+    </box>
+  </image>
+  <image id="47" name="images/47.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="681.80" ytl="930.60" xbr="1770.60" ybr="2368.40" z_order="0">
+    </box>
+  </image>
+  <image id="48" name="images/48.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="801.92" ytl="1269.35" xbr="1587.20" ybr="2435.66" z_order="0">
+    </box>
+  </image>
+  <image id="49" name="images/49.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="576.29" ytl="55.14" xbr="1828.28" ybr="1912.84" rotation="2.80" z_order="0">
+    </box>
+  </image>
+  <image id="5" name="images/5.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="547.04" ytl="641.92" xbr="2318.54" ybr="3433.60" rotation="2.00" z_order="0">
+    </box>
+  </image>
+  <image id="50" name="images/50.jpg" width="1440" height="2560">
+    <box label="face" source="manual" occluded="0" xtl="423.00" ytl="653.09" xbr="1039.70" ybr="1613.00" z_order="0">
+    </box>
+  </image>
+  <image id="51" name="images/51.jpg" width="1968" height="1968">
+    <box label="face" source="manual" occluded="0" xtl="443.46" ytl="319.80" xbr="1450.40" ybr="1788.09" rotation="1.20" z_order="0">
+    </box>
+  </image>
+  <image id="52" name="images/52.jpg" width="2124" height="2832">
+    <box label="face" source="manual" occluded="0" xtl="723.71" ytl="962.40" xbr="1440.54" ybr="2021.70" rotation="2.30" z_order="0">
+    </box>
+  </image>
+  <image id="53" name="images/53.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="1106.76" ytl="855.90" xbr="2437.63" ybr="2745.42" rotation="357.40" z_order="0">
+    </box>
+  </image>
+  <image id="54" name="images/54.jpg" width="3136" height="4224">
+    <box label="face" source="manual" occluded="0" xtl="788.97" ytl="1494.50" xbr="2115.50" ybr="3561.30" z_order="0">
+    </box>
+  </image>
+  <image id="55" name="images/55.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="359.22" ytl="988.93" xbr="1244.25" ybr="2182.84" rotation="354.40" z_order="0">
+    </box>
+  </image>
+  <image id="56" name="images/56.jpg" width="4224" height="5632">
+    <box label="face" source="manual" occluded="0" xtl="1779.30" ytl="1458.45" xbr="3240.20" ybr="3450.20" z_order="0">
+    </box>
+  </image>
+  <image id="57" name="images/57.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="1069.30" ytl="1097.08" xbr="2229.30" ybr="2864.70" z_order="0">
+    </box>
+  </image>
+  <image id="58" name="images/58.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="477.10" ytl="271.80" xbr="1778.09" ybr="2505.30" z_order="0">
+    </box>
+  </image>
+  <image id="59" name="images/59.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="699.80" ytl="712.42" xbr="1802.00" ybr="2466.40" z_order="0">
+    </box>
+  </image>
+  <image id="6" name="images/6.jpg" width="1972" height="4160">
+    <box label="face" source="manual" occluded="0" xtl="195.24" ytl="708.10" xbr="1928.57" ybr="3167.80" z_order="0">
+    </box>
+  </image>
+  <image id="60" name="images/60.jpg" width="1728" height="3072">
+    <box label="face" source="manual" occluded="0" xtl="290.48" ytl="478.49" xbr="1263.00" ybr="2078.30" rotation="2.70" z_order="0">
+    </box>
+  </image>
+  <image id="61" name="images/61.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="874.86" ytl="997.44" xbr="1586.12" ybr="2043.99" rotation="3.70" z_order="0">
+    </box>
+  </image>
+  <image id="62" name="images/62.jpg" width="3136" height="4224">
+    <box label="face" source="manual" occluded="0" xtl="949.69" ytl="1425.08" xbr="2118.37" ybr="3254.92" z_order="0">
+    </box>
+  </image>
+  <image id="63" name="images/63.jpg" width="1944" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="586.59" ytl="913.77" xbr="1197.70" ybr="1776.86" z_order="0">
+    </box>
+  </image>
+  <image id="64" name="images/64.jpg" width="1936" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="467.20" ytl="692.00" xbr="1353.37" ybr="1871.43" z_order="0">
+    </box>
+  </image>
+  <image id="65" name="images/65.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="838.76" ytl="1019.60" xbr="1675.67" ybr="2279.71" rotation="358.30" z_order="0">
+    </box>
+  </image>
+  <image id="66" name="images/66.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="1140.76" ytl="1421.14" xbr="2328.90" ybr="3374.00" z_order="0">
+    </box>
+  </image>
+  <image id="67" name="images/67.jpg" width="2332" height="5184">
+    <box label="face" source="manual" occluded="0" xtl="221.60" ytl="1532.00" xbr="2031.90" ybr="4199.43" z_order="0">
+    </box>
+  </image>
+  <image id="68" name="images/68.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="1248.10" ytl="1757.00" xbr="2341.27" ybr="3347.60" z_order="0">
+    </box>
+  </image>
+  <image id="69" name="images/69.jpg" width="1528" height="3216">
+    <box label="face" source="manual" occluded="0" xtl="256.90" ytl="974.40" xbr="1281.60" ybr="2264.77" z_order="0">
+    </box>
+  </image>
+  <image id="7" name="images/7.jpg" width="1836" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="426.96" ytl="551.81" xbr="1545.91" ybr="2174.46" z_order="0">
+    </box>
+  </image>
+  <image id="70" name="images/70.jpg" width="4112" height="7296">
+    <box label="face" source="manual" occluded="0" xtl="937.11" ytl="651.90" xbr="3119.71" ybr="3945.84" rotation="0.50" z_order="0">
+    </box>
+  </image>
+  <image id="71" name="images/71.jpg" width="3880" height="5184">
+    <box label="face" source="manual" occluded="0" xtl="1273.55" ytl="1223.21" xbr="3174.30" ybr="3977.84" rotation="358.50" z_order="0">
+    </box>
+  </image>
+  <image id="72" name="images/72.jpg" width="2320" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="689.61" ytl="771.30" xbr="1828.90" ybr="2307.13" z_order="0">
+    </box>
+  </image>
+  <image id="73" name="images/73.jpg" width="1980" height="2640">
+    <box label="face" source="manual" occluded="0" xtl="549.97" ytl="242.67" xbr="1559.17" ybr="1700.60" z_order="0">
+    </box>
+  </image>
+  <image id="74" name="images/74.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="519.20" ytl="336.29" xbr="1678.50" ybr="2113.11" z_order="0">
+    </box>
+  </image>
+  <image id="75" name="images/75.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="477.98" ytl="727.60" xbr="1736.20" ybr="2479.80" z_order="0">
+    </box>
+  </image>
+  <image id="76" name="images/76.jpg" width="1936" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="697.60" ytl="1025.70" xbr="1491.43" ybr="2095.40" z_order="0">
+    </box>
+  </image>
+  <image id="77" name="images/77.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="757.91" ytl="508.30" xbr="1651.43" ybr="1671.29" z_order="0">
+    </box>
+  </image>
+  <image id="78" name="images/78.jpg" width="3880" height="5184">
+    <box label="face" source="manual" occluded="0" xtl="1278.86" ytl="2011.43" xbr="2944.60" ybr="4217.14" z_order="0">
+    </box>
+  </image>
+  <image id="79" name="images/79.jpg" width="3880" height="5184">
+    <box label="face" source="manual" occluded="0" xtl="1067.77" ytl="1470.29" xbr="2724.50" ybr="3794.86" z_order="0">
+    </box>
+  </image>
+  <image id="8" name="images/8.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="676.82" ytl="1018.05" xbr="1738.95" ybr="2559.20" rotation="355.40" z_order="0">
+    </box>
+  </image>
+  <image id="80" name="images/80.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="659.10" ytl="788.70" xbr="1834.10" ybr="2510.64" z_order="0">
+    </box>
+  </image>
+  <image id="81" name="images/81.jpg" width="3880" height="5184">
+    <box label="face" source="manual" occluded="0" xtl="1174.29" ytl="1897.30" xbr="2551.27" ybr="3754.44" z_order="0">
+    </box>
+  </image>
+  <image id="82" name="images/82.jpg" width="2320" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="316.60" ytl="896.70" xbr="1452.70" ybr="2684.20" z_order="0">
+    </box>
+  </image>
+  <image id="83" name="images/83.jpg" width="1440" height="2560">
+    <box label="face" source="manual" occluded="0" xtl="294.71" ytl="547.00" xbr="1053.50" ybr="1620.00" z_order="0">
+    </box>
+  </image>
+  <image id="84" name="images/84.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="659.55" ytl="658.70" xbr="1491.53" ybr="1829.80" z_order="0">
+    </box>
+  </image>
+  <image id="85" name="images/85.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="685.90" ytl="1027.50" xbr="1527.70" ybr="2166.80" z_order="0">
+    </box>
+  </image>
+  <image id="86" name="images/86.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="684.90" ytl="329.46" xbr="1762.86" ybr="1817.80" z_order="0">
+    </box>
+  </image>
+  <image id="87" name="images/87.jpg" width="1504" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="161.20" ytl="541.38" xbr="1201.90" ybr="1965.54" z_order="0">
+    </box>
+  </image>
+  <image id="88" name="images/88.jpg" width="1944" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="523.80" ytl="441.90" xbr="1305.24" ybr="1615.70" z_order="0">
+    </box>
+  </image>
+  <image id="89" name="images/89.jpg" width="3024" height="4032">
+    <box label="face" source="manual" occluded="0" xtl="798.00" ytl="1132.00" xbr="2315.47" ybr="3393.33" z_order="0">
+    </box>
+  </image>
+  <image id="9" name="images/9.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="533.68" ytl="455.80" xbr="1682.12" ybr="2024.40" z_order="0">
+    </box>
+  </image>
+  <image id="90" name="images/90.jpg" width="2320" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="548.28" ytl="520.09" xbr="1924.81" ybr="2247.90" z_order="0">
+    </box>
+  </image>
+  <image id="91" name="images/91.jpg" width="1936" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="365.60" ytl="680.00" xbr="1392.70" ybr="2068.60" z_order="0">
+    </box>
+  </image>
+  <image id="92" name="images/92.jpg" width="3456" height="4608">
+    <box label="face" source="manual" occluded="0" xtl="899.30" ytl="1720.72" xbr="2572.23" ybr="3881.00" z_order="0">
+    </box>
+  </image>
+  <image id="93" name="images/93.jpg" width="1944" height="2592">
+    <box label="face" source="manual" occluded="0" xtl="556.00" ytl="999.50" xbr="1511.60" ybr="2239.93" z_order="0">
+    </box>
+  </image>
+  <image id="94" name="images/94.jpg" width="1932" height="2576">
+    <box label="face" source="manual" occluded="0" xtl="623.60" ytl="571.40" xbr="1456.20" ybr="1817.90" z_order="0">
+    </box>
+  </image>
+  <image id="95" name="images/95.jpg" width="2316" height="3088">
+    <box label="face" source="manual" occluded="0" xtl="547.87" ytl="332.61" xbr="1699.40" ybr="1917.45" z_order="0">
+    </box>
+  </image>
+  <image id="96" name="images/96.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="697.74" ytl="825.00" xbr="1897.99" ybr="2533.96" z_order="0">
+    </box>
+  </image>
+  <image id="97" name="images/97.jpg" width="1472" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="374.30" ytl="1125.43" xbr="1135.20" ybr="2287.25" z_order="0">
+    </box>
+  </image>
+  <image id="98" name="images/98.jpg" width="1440" height="3200">
+    <box label="face" source="manual" occluded="0" xtl="220.61" ytl="614.50" xbr="1075.70" ybr="1838.20" z_order="0">
+    </box>
+  </image>
+  <image id="99" name="images/99.jpg" width="2448" height="3264">
+    <box label="face" source="manual" occluded="0" xtl="547.85" ytl="1114.52" xbr="1748.70" ybr="2849.90" z_order="0">
+    </box>
+  </image>
+</annotations>
+
+
